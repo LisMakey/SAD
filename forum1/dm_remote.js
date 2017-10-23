@@ -42,6 +42,10 @@ client.on ('data', function (data) {
 			break;
 		case 'get subject':
 		case 'login':
+		console.log ('We received a reply for: ' + reply.what + ':' + reply.invoId);
+			callbacks [reply.invoId] (reply.obj); // call the stored callback, one argument
+			delete callbacks [reply.invoId]; // remove from hash
+			break;
 		case 'get user list':
 		case 'add subject':
 		case 'add user':

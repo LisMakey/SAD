@@ -25,34 +25,34 @@ server = net.createServer(function(sock) {
         		reply.obj = dm.getSubjectList();
         		break;
             case 'get public message list': 
-            	reply.obj = dm.getPublicMessageList (cmd.sbj);
+            	reply.obj = dm.getPublicMessageList (invo.sbj);
             	break;
             case 'get private message list': 
-            	reply.obj = dm.getPrivateMessageList (cmd.u1, cmd.u2);
+            	reply.obj = dm.getPrivateMessageList (invo.u1, invo.u2);
             	break;
             case 'add user': 
-                reply.obj = dm.addUser (cmd.u1, cmd.u2);
+                reply.obj = dm.addUser (invo.u1, invo.u2);
                 break;
             case 'add subject': 
-                reply.obj = dm.addSubject (cmd.sbj);
+                reply.obj = dm.addSubject (invo.sbj);
                 break;
             case 'get user list': 
                 reply.obj = dm.getUserList ();
                 break;
             case 'login': 
-                reply.obj = dm.login (cmd.u1,cmd.u2);
+                reply.obj = dm.login (invo.u1,invo.u2);
                 break;
             case 'add private message': 
-                reply.obj = dm.addPrivateMessage (cmd.message);
+                reply.obj = dm.addPrivateMessage (invo.message);
                 break;
             case 'get private message list': 
-                reply.obj = dm.getPrivateMessageList (cmd.u1,cmd.u2);
+                reply.obj = dm.getPrivateMessageList (invo.u1,invo.u2);
                 break;
             case 'get subject': 
-                reply.obj = dm.getSubject (cmd.sbj);
+                reply.obj = dm.getSubject (invo.sbj);
                 break;
             case 'add public message': 
-                reply.obj = dm.addPublicMessage (cmd.sbj);
+                reply.obj = dm.addPublicMessage (invo.sbj);
                 break;
             // TODO: complete all forum functions
         }
